@@ -30,4 +30,4 @@ LIMIT 5;
 
 ### Performance Improvement in a Production Environment
 1. **Indexing**: Add indexes on `order_date` and `amount` columns to improve the performance of the query.
-2. **Partitioning**: Partition the `orders` table by `order_date` to improve the performance of the query.
+2. **Partitioning**: Implement table partitioning (PostgreSQL) strategy on the `orders` table using `order_date` as the partition key. This approach will segments the large table into smaller, more manageable chunks (partitions) based on date ranges (e.g., monthly partitions). Each partition functions as an independent table while maintaining the appearance of a single table for queries, resulting in improved query performance.
