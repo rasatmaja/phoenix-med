@@ -32,4 +32,17 @@ To ensure thread safety in banking transactions, we can implement two different 
    - Scales well with multiple service instances
    - Ideal for high-load production environments
 
-> ***For this implementation, we'll use the Non-Blocking approach with  Golang's built-in `sync.Map` as locker.*** 
+### Implementation Details
+> ***For this implementation, I'll use the Non-Blocking approach with  Golang's built-in `sync.Map` as locker.*** 
+
+#### Architecture
+The system is implemented using a clean architecture pattern with the following components:
+- **Service Layer**: Handles business logic and transaction management
+- **Repository Layer**: Manages data persistence and implements locking mechanism
+- **Model Layer**: Defines data structures and error types
+
+#### Testing
+The implementation includes integration tests that:
+- Verify concurrent transaction handling
+- Test multiple scenarios (deposit, withdrawal, insufficient funds)
+- Use testcontainers for PostgreSQL database setup
