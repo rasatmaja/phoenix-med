@@ -21,6 +21,8 @@ Each component serves a specific purpose:
 The API implements standard HTTP methods following REST principles:
 - `GET`: Retrieves resources from the server without modifying data (e.g., fetching product list, viewing cart contents)
 - `POST`: Creates new resources or triggers actions (e.g., user registration, user login, adding items to cart)
+- `PUT`: Updates existing resources (e.g., updating user profile, updating cart item quantity)
+- `DELETE`: Removes resources from the server (e.g., removing an item from the cart)
 
 The API will use JSON as the default response format for all endpoints and contains three main components:
 1. `message`: A human-readable description of what happened with the request
